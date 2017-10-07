@@ -1,0 +1,20 @@
+os: osx
+osx_image: xcode9
+language: swift
+xcode_workspace: Movies.xcworkspace
+xcode_scheme: MoviesTests
+
+cache: cocoapods
+
+before_install:
+  - bundle install
+  - bundle exec pod repo update
+
+install:
+  - bundle exec pod install
+
+script:
+  - bundle exec fastlane test
+
+after_success:
+  - bundle exec fastlane coverage
