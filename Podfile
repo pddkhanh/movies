@@ -10,6 +10,7 @@ target 'Movies' do
 
   pod 'SwiftyJSON'
   pod 'CocoaLumberjack/Swift'
+  pod 'Swinject'
 
   # ReactiveX
   pod 'RxSwift' 
@@ -21,9 +22,8 @@ target 'Movies' do
   # UI
   pod 'NVActivityIndicatorView'
   pod 'Toaster'
+  pod 'SDWebImage', '~> 4.0'
   
-  pod 'Swinject'
-
   target 'MoviesTests' do
     inherit! :search_paths
     # Pods for testing
@@ -33,6 +33,7 @@ target 'Movies' do
 
     pod 'Quick'
     pod 'Nimble'
+    pod 'Mockingjay'
   end
 
 end
