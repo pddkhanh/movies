@@ -27,8 +27,8 @@ class MoviesListViewController: UIViewController, BindableType, UITableViewDeleg
         super.viewDidLoad()
         setupViews()
         
-        let vm = MoviesListViewModel(moviesService: AppComponents.shared.moviesService)
-        bindViewModel(to: vm)
+//        let vm = MoviesListViewModel(moviesService: AppComponents.shared.moviesService)
+//        bindViewModel(to: vm)
         
     }
     
@@ -77,6 +77,30 @@ class MoviesListViewController: UIViewController, BindableType, UITableViewDeleg
             .disposed(by: disposeBag)
     }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMovieDetail" {
+            guard let vc = segue.destination as? MovieDetailViewController else {
+                return
+            }
+            
+            guard let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) else {
+                return
+            }
+            
+            let movies = viewModel.movies.value
+            if indexPath.row < 0 || indexPath.row >= movies.count {
+                return
+            }
+            
+            let vm = MovieDetailViewModel(movie: movies[indexPath.row], moviesService: AppComponents.shared.moviesService)
+            vc.bindViewModel(to: vm)
+        }
+    }
+    
+    // MARK: - Private
+    
     private func setupViews() {
         refreshControl = UIRefreshControl()
         tableView.refreshControl = refreshControl
@@ -90,6 +114,10 @@ class MoviesListViewController: UIViewController, BindableType, UITableViewDeleg
         if indexPath.row == viewModel.movies.value.count - 1 {
             viewModel.fetchMore()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

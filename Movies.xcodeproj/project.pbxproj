@@ -43,6 +43,11 @@
 		CF7926241F88933E0056295F /* MoviesListViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7926231F88933E0056295F /* MoviesListViewModelSpec.swift */; };
 		CFF00DF21F8764D30081F854 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFF00DF11F8764D30081F854 /* Assets.xcassets */; };
 		CFF00E001F8764D30081F854 /* MoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF00DFF1F8764D30081F854 /* MoviesTests.swift */; };
+		CFFB36691F88ABCE00C0D63B /* movie_detail.json in Resources */ = {isa = PBXBuildFile; fileRef = CFFB36681F88ABCE00C0D63B /* movie_detail.json */; };
+		CFFB366B1F88AEDF00C0D63B /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFB366A1F88AEDF00C0D63B /* Util.swift */; };
+		CFFB366D1F88B41100C0D63B /* UtilSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFB366C1F88B41100C0D63B /* UtilSpec.swift */; };
+		CFFB36701F88B4B900C0D63B /* MovieDetailViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFB366F1F88B4B900C0D63B /* MovieDetailViewModelSpec.swift */; };
+		CFFB36731F88B4EE00C0D63B /* MockMoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFB36721F88B4EE00C0D63B /* MockMoviesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +105,11 @@
 		CFF00DFB1F8764D30081F854 /* MoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF00DFF1F8764D30081F854 /* MoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTests.swift; sourceTree = "<group>"; };
 		CFF00E011F8764D30081F854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFFB36681F88ABCE00C0D63B /* movie_detail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = movie_detail.json; sourceTree = "<group>"; };
+		CFFB366A1F88AEDF00C0D63B /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		CFFB366C1F88B41100C0D63B /* UtilSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilSpec.swift; sourceTree = "<group>"; };
+		CFFB366F1F88B4B900C0D63B /* MovieDetailViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModelSpec.swift; sourceTree = "<group>"; };
+		CFFB36721F88B4EE00C0D63B /* MockMoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMoviesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +226,7 @@
 				CF4333681F87722F00A05C14 /* Logger.swift */,
 				CF75F12D1F8784620013F569 /* LoadingIndicator.swift */,
 				CF75F12F1F8785060013F569 /* ToastHelper.swift */,
+				CFFB366A1F88AEDF00C0D63B /* Util.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -237,6 +248,7 @@
 				CF43336A1F87725500A05C14 /* LoggerSpec.swift */,
 				CF75F1361F8787A60013F569 /* UIKitRxSpec.swift */,
 				CF75F1381F8787D40013F569 /* RxExtensionsSpec.swift */,
+				CFFB366C1F88B41100C0D63B /* UtilSpec.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -293,6 +305,7 @@
 				CF7926171F8889650056295F /* movie_summary.json */,
 				CF79261B1F888C120056295F /* fetch_movies_result.json */,
 				CF79261D1F888C2F0056295F /* fetch_detail_result.json */,
+				CFFB36681F88ABCE00C0D63B /* movie_detail.json */,
 			);
 			path = SampleJSON;
 			sourceTree = "<group>";
@@ -300,6 +313,7 @@
 		CF79261F1F88931B0056295F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CFFB366E1F88B4AD00C0D63B /* MovieDetail */,
 				CF7926221F88932F0056295F /* MoviesList */,
 			);
 			path = Scenes;
@@ -348,12 +362,29 @@
 		CFF00DFE1F8764D30081F854 /* MoviesTests */ = {
 			isa = PBXGroup;
 			children = (
+				CFFB36711F88B4D600C0D63B /* Helpers */,
 				CF79261F1F88931B0056295F /* Scenes */,
 				CF43335B1F876C9300A05C14 /* Components */,
 				CFF00DFF1F8764D30081F854 /* MoviesTests.swift */,
 				CFF00E011F8764D30081F854 /* Info.plist */,
 			);
 			path = MoviesTests;
+			sourceTree = "<group>";
+		};
+		CFFB366E1F88B4AD00C0D63B /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CFFB366F1F88B4B900C0D63B /* MovieDetailViewModelSpec.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		CFFB36711F88B4D600C0D63B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CFFB36721F88B4EE00C0D63B /* MockMoviesService.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,6 +489,7 @@
 				CF79261C1F888C120056295F /* fetch_movies_result.json in Resources */,
 				CF7926181F8889650056295F /* movie_summary.json in Resources */,
 				CF79261E1F888C2F0056295F /* fetch_detail_result.json in Resources */,
+				CFFB36691F88ABCE00C0D63B /* movie_detail.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +648,7 @@
 				CF75F1351F8787690013F569 /* RxExtentions.swift in Sources */,
 				CF43335A1F876C6200A05C14 /* MovieTableViewCell.swift in Sources */,
 				CF27033C1F877D8A00245B5C /* MovieDetailViewController.swift in Sources */,
+				CFFB366B1F88AEDF00C0D63B /* Util.swift in Sources */,
 				CF4333561F87685000A05C14 /* BindableType.swift in Sources */,
 				CF4333731F87752800A05C14 /* Configs.swift in Sources */,
 				CF4333451F87673E00A05C14 /* AppDelegate.swift in Sources */,
@@ -639,8 +672,11 @@
 				CF79261A1F888B6F0056295F /* MoviesServiceSpec.swift in Sources */,
 				CF7926241F88933E0056295F /* MoviesListViewModelSpec.swift in Sources */,
 				CF43335E1F876CA400A05C14 /* BindableTypeSpec.swift in Sources */,
+				CFFB36731F88B4EE00C0D63B /* MockMoviesService.swift in Sources */,
 				CF7926121F8873030056295F /* ApiClientSpec.swift in Sources */,
 				CF43336B1F87725500A05C14 /* LoggerSpec.swift in Sources */,
+				CFFB36701F88B4B900C0D63B /* MovieDetailViewModelSpec.swift in Sources */,
+				CFFB366D1F88B41100C0D63B /* UtilSpec.swift in Sources */,
 				CF75F1391F8787D40013F569 /* RxExtensionsSpec.swift in Sources */,
 				CF75F1371F8787A60013F569 /* UIKitRxSpec.swift in Sources */,
 				CF7926151F8888FE0056295F /* MovieModelSpec.swift in Sources */,

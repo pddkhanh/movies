@@ -23,7 +23,7 @@ class MovieModelSpec: QuickSpec {
                 expect(model.popularity).to(beNil())
             }
             
-            it("should init properly from JSON") {
+            it("should init properly from JSON summary") {
                 let fileUrl = Bundle(for: self.classForCoder).url(forResource: "movie_summary", withExtension: "json")!
                 let jsonData = try! Data(contentsOf: fileUrl)
                 let json = JSON(data: jsonData)
@@ -34,6 +34,23 @@ class MovieModelSpec: QuickSpec {
                 expect(model.title).to(equal("Discolocos"))
                 expect(model.posterPath).to(equal("/g0UdbPGwt7jz9UwudEQCtQXHvUL.jpg"))
                 expect(model.popularity).to(equal(1.107237))
+            }
+            
+            it("should init properly from JSON detail") {
+                let fileUrl = Bundle(for: self.classForCoder).url(forResource: "movie_detail", withExtension: "json")!
+                let jsonData = try! Data(contentsOf: fileUrl)
+                let json = JSON(data: jsonData)
+                
+                let model = MovieModel(json: json)
+                
+                expect(model.id).to(equal(346364))
+                expect(model.title).to(equal("It"))
+                expect(model.posterPath).to(equal("/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg"))
+                expect(model.popularity).to(equal(495.821171))
+                expect(model.overview).to(equal("In a small town in Maine, seven children known as The Losers Club come face to face with life problems, bullies and a monster that takes the shape of a clown called Pennywise."))
+                expect(model.genres).to(equal(["Adventure", "Drama", "Horror"]))
+                expect(model.languages).to(equal(["English"]))
+                expect(model.durationInMinutes).to(equal(135))
             }
         }
     }

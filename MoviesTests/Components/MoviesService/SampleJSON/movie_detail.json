@@ -1,0 +1,76 @@
+{
+    "adult": false,
+    "backdrop_path": "/tcheoA2nPATCm2vvXw2hVQoaEFD.jpg",
+    "belongs_to_collection": {
+        "id": 474350,
+        "name": "IT: Movie Collection",
+        "poster_path": "/3GFxHDrhHQOVAzgULZc70HbDquo.jpg",
+        "backdrop_path": "/aOMCLLvU4BuoZt2vy5tskyFetkz.jpg"
+    },
+    "budget": 35000000,
+    "genres": [
+               {
+               "id": 12,
+               "name": "Adventure"
+               },
+               {
+               "id": 18,
+               "name": "Drama"
+               },
+               {
+               "id": 27,
+               "name": "Horror"
+               }
+               ],
+    "homepage": "http://itthemovie.com/",
+    "id": 346364,
+    "imdb_id": "tt1396484",
+    "original_language": "en",
+    "original_title": "It",
+    "overview": "In a small town in Maine, seven children known as The Losers Club come face to face with life problems, bullies and a monster that takes the shape of a clown called Pennywise.",
+    "popularity": 495.821171,
+    "poster_path": "/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg",
+    "production_companies": [
+                             {
+                             "name": "New Line Cinema",
+                             "id": 12
+                             },
+                             {
+                             "name": "Vertigo Entertainment",
+                             "id": 829
+                             },
+                             {
+                             "name": "Lin Pictures",
+                             "id": 2723
+                             },
+                             {
+                             "name": "RatPac-Dune Entertainment",
+                             "id": 41624
+                             },
+                             {
+                             "name": "KatzSmith Productions",
+                             "id": 87671
+                             }
+                             ],
+    "production_countries": [
+                             {
+                             "iso_3166_1": "US",
+                             "name": "United States of America"
+                             }
+                             ],
+    "release_date": "2017-09-05",
+    "revenue": 555575232,
+    "runtime": 135,
+    "spoken_languages": [
+                         {
+                         "iso_639_1": "en",
+                         "name": "English"
+                         }
+                         ],
+    "status": "Released",
+    "tagline": "Your fears are unleashed",
+    "title": "It",
+    "video": false,
+    "vote_average": 7.4,
+    "vote_count": 1765
+}

@@ -17,10 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AppComponents.shared.setup()
         
-//        let mainVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MainNavigationController")
-//        window?.rootViewController = mainVC
+        bindViewModelForInitialViewController()
         
         return true
+    }
+    
+    private func bindViewModelForInitialViewController() {
+        guard let navVC = window?.rootViewController as? UINavigationController else {
+            return
+        }
+        
+        guard let listVC = navVC.viewControllers.first as? MoviesListViewController else {
+            return
+        }
+        
+        let vm = MoviesListViewModel(moviesService: AppComponents.shared.moviesService)
+        listVC.bindViewModel(to: vm)
     }
 
 }

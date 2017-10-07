@@ -14,6 +14,10 @@ struct MovieModel {
     var title: String?
     var posterPath: String?
     var popularity: Double?
+    var overview: String?
+    var genres: [String]?
+    var languages: [String]?
+    var durationInMinutes: Int?
     
     init() {
         
@@ -26,5 +30,9 @@ struct MovieModel {
         title = json["title"].string
         popularity = json["popularity"].double
         posterPath = json["poster_path"].string
+        overview = json["overview"].string
+        genres = json["genres"].array?.flatMap { $0["name"].string }
+        languages = json["spoken_languages"].array?.flatMap { $0["name"].string }
+        durationInMinutes = json["runtime"].int
     }
 }

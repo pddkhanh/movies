@@ -49,7 +49,6 @@ class MoviesListViewModel {
                 }
             )
             .disposed(by: disposeBag)
-        
     }
     
     /**

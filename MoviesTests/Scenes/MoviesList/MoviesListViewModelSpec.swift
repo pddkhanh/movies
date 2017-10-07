@@ -151,15 +151,3 @@ func checkMoviesEqual(lhs: [MovieModel], rhs: [MovieModel]) -> Bool {
     return true
 }
 
-class MockMoviesService: MoviesServiceType {
-    
-    var stub_fetchListMovies: Observable<[MovieModel]>?
-    func fetchListMovies(page: Int) -> Observable<[MovieModel]> {
-        return stub_fetchListMovies ?? .empty()
-    }
-    
-    var stub_fetchMovieDetailById: Observable<MovieModel>?
-    func fetchMovieDetailById(_ movieId: Int) -> Observable<MovieModel> {
-        return stub_fetchMovieDetailById ?? .empty()
-    }
-}
